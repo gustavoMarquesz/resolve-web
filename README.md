@@ -1,6 +1,6 @@
 # resolve-web
 Welcome! o Gestor empresarial RESOLVE, está com cara nova. O mesmo ganhou um versão web, depois de suas versões em terminal e desktop (ambas aqui no github).
-Logo de cara, vemos funcionalidades familizares as dos seus irmãos, porém atualizadas e modernizadas e dando continuidade ao padrão MVC (model, view e controller).
+Logo de cara, vemos funcionalidades familiares as dos seus irmãos, porém atualizadas, modernizadas e dando continuidade ao padrão MVC (model, view e controller).
 Podemos ver que a tabelea está com informações mais exutas, podendo ver mais detalhes clicando no link ao final da tabela.
 
 ![image](https://user-images.githubusercontent.com/29557719/228344112-38da64ef-f49e-41cd-b1ae-65eb64c4acb4.png)
