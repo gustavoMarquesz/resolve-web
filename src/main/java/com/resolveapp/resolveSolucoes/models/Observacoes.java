@@ -8,13 +8,13 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Certificado {
+public class Observacoes {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private  int unicoCertificado;
-    @Column
-    private String dataDoVencimento;
+    private  int obsCod;
+
+    private String obsDescricao;
 
     @ManyToOne
     private RegistroEmpresa empresa;

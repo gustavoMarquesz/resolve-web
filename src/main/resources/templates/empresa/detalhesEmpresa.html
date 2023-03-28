@@ -126,17 +126,17 @@
         </div>
     </div>
     <div class="container center-align">
-        <div th:each="certificados : ${certificados}" >
+        <div th:each="observacoes : ${observacoes}" >
             <div class="row">
                 <h3>↓</h3>
-                <p><span th:text="${certificados.dataDoVencimento}"></span></p>
+                <p><span th:text="${observacoes.obsDescricao}"></span></p>
             </div>
         </div>
     </div>
 </div>
 <form method="post" class="formObs center-align">
     <label>Adicionar observação</label>
-    <input type="text" value="observação..." name="dataDoVencimento" required>
+    <input type="text" value="observação..." name="obsDescricao" required>
     <button type="submit" class="btn">vincular observação</button>
 </form>
 

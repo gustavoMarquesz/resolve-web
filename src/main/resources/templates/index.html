@@ -46,7 +46,7 @@
                 <td><span th:text="${empresas.razaoFisicaNome}"></span></td>
                 <td><span th:text="${empresas.statusCertificado}"></span></td>
                 <td><span th:text="${empresas.data}"></span></td>
-                <td><a th:href="${(#mvc.url('EC#detalhesEmpresa').arg(0, empresas.id)).build()}">detalhes/adicionar observações<span th:text="${empresas.nomeFuncionario}"></span></a></td>
+                <td><a th:href="${(#mvc.url('EC#detalhesEmpresa').arg(0, empresas.id)).build()}">detalhes/adicionar observações</a></td>
             </tr>
     </table>
     </div>

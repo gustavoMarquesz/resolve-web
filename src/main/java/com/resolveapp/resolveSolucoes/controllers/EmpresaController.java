@@ -1,9 +1,9 @@
 package com.resolveapp.resolveSolucoes.controllers;
 
-import com.resolveapp.resolveSolucoes.models.Certificado;
+import com.resolveapp.resolveSolucoes.models.Observacoes;
 import com.resolveapp.resolveSolucoes.models.RegistroEmpresa;
 import com.resolveapp.resolveSolucoes.repository.CadastroEmpresaRepository;
-import com.resolveapp.resolveSolucoes.repository.CertificadoRepository;
+import com.resolveapp.resolveSolucoes.repository.ObservacoesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,7 +17,7 @@ public class EmpresaController {
     private CadastroEmpresaRepository repository;
 
     @Autowired
-    private CertificadoRepository certificadoRepository;
+    private ObservacoesRepository observacoesRepository;
     @RequestMapping(value ="/cadastro" , method = RequestMethod.GET)
     public String cadastroEmpresa(){
         return "empresa/viewCadastroEmpresa";
@@ -26,7 +26,7 @@ public class EmpresaController {
     @RequestMapping(value ="/cadastro" , method = RequestMethod.POST)
     public String cadastroEmpresa(RegistroEmpresa registroEmpresa){
         repository.save(registroEmpresa);
-        return "redirect:/cadastro";
+        return "redirect:/empresas";
     }
 
     @RequestMapping(value = "/empresas", method = RequestMethod.GET)
@@ -43,17 +43,17 @@ public class EmpresaController {
         ModelAndView empresasById = new ModelAndView("empresa/detalhesEmpresa");
         empresasById.addObject("empresas", empresas);
 
-        Iterable<Certificado> certificados = certificadoRepository.findByEmpresa(empresas);
-        empresasById.addObject("certificados", certificados);
+        Iterable<Observacoes> observacoes = observacoesRepository.findByEmpresa(empresas);
+        empresasById.addObject("observacoes", observacoes);
 
         return empresasById;
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.POST)
-    public String addCertificado(@PathVariable("id") int id, Certificado certificado){
+    public String addObservacao(@PathVariable("id") int id, Observacoes observacoes){
         RegistroEmpresa empresas = repository.findById(id);
-        certificado.setEmpresa(empresas);
-        certificadoRepository.save(certificado);
+        observacoes.setEmpresa(empresas);
+        observacoesRepository.save(observacoes);
         return "redirect:/{id}";
     }
 }

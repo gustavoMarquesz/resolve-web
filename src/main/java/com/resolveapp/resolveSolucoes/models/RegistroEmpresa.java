@@ -11,7 +11,7 @@ import java.util.List;
 @Getter
 @Setter
 @NoArgsConstructor
-public class RegistroEmpresa extends Funcionario implements Serializable {
+public class RegistroEmpresa implements Serializable {
     private static  final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -27,10 +27,9 @@ public class RegistroEmpresa extends Funcionario implements Serializable {
     private String statusCertificado;
 
     @OneToMany
-    private List<Certificado> certificado;
+    private List<Observacoes> observacoes;
 
     public RegistroEmpresa(String nomeFuncionario, String email, String empresaNome, String empresaCnpj, String razaoFisicaNome, String razaoFisicaCPF, String data, String textoPost) {
-        super(nomeFuncionario, email);
         this.empresaNome = empresaNome;
         this.empresaCnpj = empresaCnpj;
         this.textoPost = textoPost;
